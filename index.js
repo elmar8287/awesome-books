@@ -28,7 +28,7 @@ function addItem(title, author) {
         const index = books.findIndex((rBook) => rBook.title === deleteBtn.id);
         books.splice(index, 1);
         list.removeChild(book);
-        saveFormDataToLocalStorage(books);
+        // saveFormDataToLocalStorage(books);
       }
     });
   });
@@ -36,5 +36,37 @@ function addItem(title, author) {
 
 buttonClass.addEventListener('click', () => {
   addItem(bookTitle, bookAuthor);
-  saveFormDataToLocalStorage(books);
+  // saveFormDataToLocalStorage(books);
+});
+
+
+
+function saveFormDataToLocalStorage(title, author) {
+  const bookList = {
+    title: title.value,
+    author: author.value,
+  };
+  localStorage.setItem('bookList', JSON.stringify(bookList));
+}
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+
+const inputsArray = [titleInput, authorInput];
+// GETTING FORM DATA FROM LOCAL STORAGE
+window.addEventListener('load', () => {
+  if (JSON.parse(localStorage.getItem('bookList'))) {
+    const { title, author } = JSON.parse(
+      localStorage.getItem('bookList'),
+    );
+    titleInput.value = title;
+    authorInput.value = author;
+  }
+  inputsArray.forEach((input) => input.addEventListener('input', (e) => {
+    if (input === titleInput) {
+      titleInput.value = title.value;
+    } else if (input === authorInput) {
+      authorInput.value = input.value;
+    }
+    saveFormDataToLocalStorage(titleInput, authorInput);
+  }));
 });
