@@ -1,11 +1,15 @@
-# Capstone project. Tech world
+# Awesome Books. WDynamic websites with JS
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-> The topic of project is Tech World.
-> Using AI in Medicine
+Tasks to do:
 
-![Screen Shot](./screen-sht/mobile_version.PNG)
+Project 1: Manage books collection (plain JS with objects).
+Project 2: Manage books collection (plain JS with classes).
+Project 3: Style core elements of the page.
+Project 4: Create a complete website with navigation.
+
+![Screen Shot]()
 
 ## Built With
 
@@ -20,10 +24,7 @@
 - GitHub: [@elmar8287](https://github.com/elmar8287)
 
 ## Live demo
-You can visit live version via [link](https://elmar8287.github.io/capstone/)
-
-## Video
-Have a look to my video via [link](https://www.loom.com/share/f1150978a5834a388239b1fa17525b3d)
+You can visit live version via [link]()
 
 ## 🤝 Contributing
 
