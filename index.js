@@ -25,6 +25,8 @@ deleteBtn.addEventListener('click', () => {
     books.splice(index, 1);
     console.log(books);
     list.removeChild(book)
+    saveFormDataToLocalStorage(books);
+    console.log(localStorage.getItem('books'));
    
   }
 })
@@ -32,29 +34,15 @@ deleteBtn.addEventListener('click', () => {
 }
 
 buttonClass.addEventListener('click',() =>{
-addItem(bookTitle, bookAuthor)
+addItem(bookTitle, bookAuthor);
+saveFormDataToLocalStorage(books);
+console.log(localStorage.getItem('books'));
 })
 
 
-// function addItem() {
-//   var author = document.createElement("li");
-//   title.setAttribute('id', bookTitle.value);
-//   title.appendChild(document.createTextNode(bookTitle.value));
-//   author.setAttribute('id', bookAuthor.value);
-//   author.appendChild(document.createTextNode(bookAuthor.value));
-//   a.appendChild(title);
-//   a.appendChild(author);
-//   const removeButton = document.createElement('button');
-//   removeButton.textContent = 'Remove';
-//   removeButton.setAttribute('class', 'btn');
-//   a.appendChild(removeButton);
-//   var item1 = document.getElementById(bookTitle.value);
-//   var item2 = document.getElementById(bookAuthor.value);
-//   const xxx = document.querySelector('#list');
-//   removeButton.onclick = () => {
-//     a.removeChild(item1);
-//     a.removeChild(item2);
-//     xxx.innerHTML = '';
-//   };
+function saveFormDataToLocalStorage(books) {
+  localStorage.setItem('books', JSON.stringify(books));
+}
 
-// }
+
+
