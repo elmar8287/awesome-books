@@ -4,10 +4,10 @@
 
 Tasks to do:
 
-Project 1: Manage books collection (plain JS with objects).
-Project 2: Manage books collection (plain JS with classes).
-Project 3: Style core elements of the page.
-Project 4: Create a complete website with navigation.
+- Project 1: Manage books collection (plain JS with objects).
+- Project 2: Manage books collection (plain JS with classes).
+- Project 3: Style core elements of the page.
+- Project 4: Create a complete website with navigation.
 
 ![Screen Shot]()
 
