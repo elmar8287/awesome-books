@@ -1,4 +1,4 @@
-# Awesome Books. WDynamic websites with JS
+# Awesome Books. Dynamic websites with JS
 
 ![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
