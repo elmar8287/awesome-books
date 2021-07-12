@@ -10,7 +10,7 @@ function addItem(title, author) {
   books.forEach((abook) => {
     const book = document.createElement('li');
     const deleteBtn = document.createElement('button');
-    deleteBtn.innerText = 'REMOVE';
+    deleteBtn.innerText = 'Remove';
     book.innerHTML = `<p>${abook.title}</p>
   <p>${abook.author} </p>`;
     deleteBtn.id = abook.title;
