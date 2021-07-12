@@ -27,7 +27,6 @@ function addItem(title, author) {
         books.splice(index, 1);
         list.removeChild(book);
         saveFormDataToLocalStorage(books);
-        console.log(localStorage.getItem('books'));
       }
     });
   });
@@ -36,5 +35,4 @@ function addItem(title, author) {
 buttonClass.addEventListener('click', () => {
   addItem(bookTitle, bookAuthor);
   saveFormDataToLocalStorage(books);
-  console.log(localStorage.getItem('books'));
 });
