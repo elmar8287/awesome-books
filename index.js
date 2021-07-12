@@ -33,8 +33,6 @@ buttonClass.addEventListener('click', () => {
   addItem(bookTitle, bookAuthor);
 });
 
-
-
 function saveFormDataToLocalStorage(title, author) {
   const bookList = {
     title: title.value,
@@ -55,9 +53,9 @@ window.addEventListener('load', () => {
     titleInput.value = title;
     authorInput.value = author;
   }
-  inputsArray.forEach((input) => input.addEventListener('input', (e) => {
+  inputsArray.forEach((input) => input.addEventListener('input', () => {
     if (input === titleInput) {
-      titleInput.value = title.value;
+      titleInput.value = input.value;
     } else if (input === authorInput) {
       authorInput.value = input.value;
     }
