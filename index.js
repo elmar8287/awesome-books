@@ -19,8 +19,10 @@ function addItem(title, author) {
   <p>${abook.author} </p>`;
     deleteBtn.id = abook.title;
     deleteBtn.className = 'removeBtn';
+    const br = document.createElement('br');
     list.appendChild(book);
     book.appendChild(deleteBtn);
+    list.appendChild(br);
     deleteBtn.addEventListener('click', () => {
       if (deleteBtn.id === abook.title) {
         const index = books.findIndex((rBook) => rBook.title === deleteBtn.id);
