@@ -4,10 +4,6 @@ const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const buttonClass = document.querySelector('.buttonClass');
 
-function saveFormDataToLocalStorage(books) {
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
 function addItem(title, author) {
   books.push({ title: title.value, author: author.value });
   list.innerHTML = '';
@@ -28,7 +24,6 @@ function addItem(title, author) {
         const index = books.findIndex((rBook) => rBook.title === deleteBtn.id);
         books.splice(index, 1);
         list.removeChild(book);
-        // saveFormDataToLocalStorage(books);
       }
     });
   });
@@ -36,7 +31,6 @@ function addItem(title, author) {
 
 buttonClass.addEventListener('click', () => {
   addItem(bookTitle, bookAuthor);
-  // saveFormDataToLocalStorage(books);
 });
 
 
