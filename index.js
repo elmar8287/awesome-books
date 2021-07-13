@@ -72,9 +72,10 @@ window.addEventListener('load', () => {
       list.appendChild(br);
       deleteBtn.addEventListener('click', () => {
         if (deleteBtn.id === abook.title) {
-          const index = books.findIndex((rBook) => rBook.title === deleteBtn.id);
-          books.splice(index, 1);
+          const index = reloadBooks.findIndex((rBook) => rBook.title === deleteBtn.id);
+          reloadBooks.splice(index, 1);
           list.removeChild(book);
+          saveBooks(reloadBooks);
         }
       });
     });
