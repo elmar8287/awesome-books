@@ -1,16 +1,17 @@
-let books = [];
 const list = document.getElementById('list');
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const buttonClass = document.querySelector('.buttonClass');
 
+function saveBooks(books) {
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
 function addItem(title, author) {
-  books.push({ title: title.value, author: author.value });
-  saveBooks(books);
-  list.innerHTML = '';
-  const getData = localStorage.getItem('books');
   const reloadBooks = JSON.parse(localStorage.getItem('books'));
-  console.log(reloadBooks);
+  reloadBooks.push({ title: title.value, author: author.value });
+  saveBooks(reloadBooks);
+  list.innerHTML = '';
   reloadBooks.forEach((abook) => {
     const book = document.createElement('li');
     const deleteBtn = document.createElement('button');
@@ -25,23 +26,18 @@ function addItem(title, author) {
     list.appendChild(br);
     deleteBtn.addEventListener('click', () => {
       if (deleteBtn.id === abook.title) {
-        const index = books.findIndex((rBook) => rBook.title === deleteBtn.id);
-        books.splice(index, 1);
+        const index = reloadBooks.findIndex((rBook) => rBook.title === deleteBtn.id);
+        reloadBooks.splice(index, 1);
         list.removeChild(book);
-        saveBooks(books);
+        saveBooks(reloadBooks);
       }
     });
   });
-  console.log(books);
 }
 
 buttonClass.addEventListener('click', () => {
   addItem(bookTitle, bookAuthor);
 });
-
-function saveBooks(books) {
-  localStorage.setItem('books', JSON.stringify(books));
-}
 
 function saveFormDataToLocalStorage(title, author) {
   const bookList = {
