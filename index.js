@@ -1,5 +1,4 @@
 let books = [];
-books = JSON.parse(localStorage.getItem('books'));
 const list = document.getElementById('list');
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
@@ -58,26 +57,28 @@ const inputsArray = [titleInput, authorInput];
 // GETTING FORM DATA FROM LOCAL STORAGE
 window.addEventListener('load', () => {
   const reloadBooks = JSON.parse(localStorage.getItem('books'));
-  reloadBooks.forEach((abook) => {
-    const book = document.createElement('li');
-    const deleteBtn = document.createElement('button');
-    deleteBtn.innerText = 'Remove';
-    book.innerHTML = `<p>${abook.title}</p>
-  <p>${abook.author} </p>`;
-    deleteBtn.id = abook.title;
-    deleteBtn.className = 'removeBtn';
-    const br = document.createElement('br');
-    list.appendChild(book);
-    book.appendChild(deleteBtn);
-    list.appendChild(br);
-    deleteBtn.addEventListener('click', () => {
-      if (deleteBtn.id === abook.title) {
-        const index = books.findIndex((rBook) => rBook.title === deleteBtn.id);
-        books.splice(index, 1);
-        list.removeChild(book);
-      }
+  if (reloadBooks !== null) {
+    reloadBooks.forEach((abook) => {
+      const book = document.createElement('li');
+      const deleteBtn = document.createElement('button');
+      deleteBtn.innerText = 'Remove';
+      book.innerHTML = `<p>${abook.title}</p>
+    <p>${abook.author} </p>`;
+      deleteBtn.id = abook.title;
+      deleteBtn.className = 'removeBtn';
+      const br = document.createElement('br');
+      list.appendChild(book);
+      book.appendChild(deleteBtn);
+      list.appendChild(br);
+      deleteBtn.addEventListener('click', () => {
+        if (deleteBtn.id === abook.title) {
+          const index = books.findIndex((rBook) => rBook.title === deleteBtn.id);
+          books.splice(index, 1);
+          list.removeChild(book);
+        }
+      });
     });
-  });
+  }
 
   if (JSON.parse(localStorage.getItem('bookList'))) {
     const { title, author } = JSON.parse(localStorage.getItem('bookList'));
