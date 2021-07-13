@@ -4,10 +4,10 @@ const bookAuthor = document.getElementById('author');
 const buttonClass = document.querySelector('.buttonClass');
 const books = [];
 
-function saveBooks(books) {
-  localStorage.setItem('books', JSON.stringify(books));
+function saveBooks(newBooks) {
+  // books = newBooks;
+  localStorage.setItem('books', JSON.stringify(newBooks));
 }
-saveBooks(books);
 
 function addItem(title, author) {
   const reloadBooks = JSON.parse(localStorage.getItem('books'));
@@ -36,7 +36,7 @@ function addItem(title, author) {
         }
       });
     });
-  }
+  } else { saveBooks(books); }
 }
 
 buttonClass.addEventListener('click', () => {
