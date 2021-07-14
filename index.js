@@ -58,3 +58,33 @@ class UseBook {
     });
   }
 }
+
+addButton.addEventListener('click', () => {
+  const newBook = UseBook.createBook();
+  UseBook.saveBook(newBook);
+  UseBook.displayBooks();
+  const books = UseBook.findBooks();
+  if (books.length === 0) {
+    const abook = UseBook.createBook();
+    const book = document.createElement('li');
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = 'Remove';
+    book.innerHTML = `<p>${abook.title}</p>
+        <p>${abook.author} </p>`;
+    deleteBtn.id = abook.title;
+    deleteBtn.className = 'removeBtn';
+    const br = document.createElement('br');
+    list.appendChild(book);
+    book.appendChild(deleteBtn);
+    list.appendChild(br);
+    deleteBtn.addEventListener('click', () => {
+      if (deleteBtn.id === abook.title) {
+        const index = books.findIndex((rBook) => rBook.title === deleteBtn.id);
+        books.splice(index, 1);
+        list.removeChild(book);
+        localStorage.setItem('books', JSON.stringify(books));
+      }
+    });
+    UseBook.saveBook(abook);
+  }
+});
