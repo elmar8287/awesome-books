@@ -4,18 +4,56 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./assets/styles.css" />
     <title>Awesome Books - Elmar Abdulkarimov</title>
   </head>
   <body>
-    <h1>Awesome books</h1>
+    <h1 class="text-center mt-5 mb-4 font-weight-bold">Awesome books</h1>
 
     <div class="container">
-      <ul id="list"></ul>
-
-      <input type="text" id="title" placeholder="Title" />
-      <input type="text" id="author" placeholder="Author" />
-      <button type="button" class="buttonClass">Add item</button>
+      <table
+        class="table table-striped w-75 ml-auto mr-auto table-hover border"
+      >
+        <tbody id="list"></tbody>
+      </table>
+      <div
+        class="
+          inputs
+          ml-auto
+          mr-auto
+          d-flex
+          flex-column
+          align-items-center
+          w-50
+          form-group
+        "
+      >
+        <h2 class="text-center mt-5 font-weight-bold">ADD A NEW BOOK</h2>
+        <input
+          type="text"
+          class="form-control mt-3 p-3"
+          id="title"
+          placeholder="Title"
+        />
+        <input
+          type="text"
+          class="form-control mt-3 p-3"
+          id="author"
+          placeholder="Author"
+        />
+        <button
+          type="button"
+          class="h-100 align-self-end p-3 mt-3 btn btn-dark buttonClass"
+        >
+          Add item
+        </button>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>

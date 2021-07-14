@@ -9,12 +9,13 @@ Tasks to do:
 - Project 3: Style core elements of the page.
 - Project 4: Create a complete website with navigation.
 
-![Screen Shot]()
+![scrn-sht](https://user-images.githubusercontent.com/49064106/125652311-511f9a9b-32a0-4989-a9a3-e2e785e49288.png)
 
 ## Built With
 
 - HTML
 - CSS
+- Bootsrap
 - JS
 
 ## Authors
@@ -22,6 +23,15 @@ Tasks to do:
 👤 **Elmar Abdulkarimov**
 
 - GitHub: [@elmar8287](https://github.com/elmar8287)
+
+👤 **Anderson Caleb**
+
+- GitHub: [@Anhersonlebon](https://github.com/andersonlebon)
+
+👤 **Erez Friemagor**
+
+- GitHub: [@Erezfree29](https://github.com/erezfree29)
+
 
 ## Live demo
 You can visit live version via [link](https://elmar8287.github.io/awesome-books/)
@@ -38,7 +48,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-Original source [Cindy Shin in Behance](https://www.behance.net/adagio07). But, the project personalized for my  purposes.
+The project personalized for our purposes.
 
 ## 📝 License
 
