@@ -4,6 +4,31 @@ const bookAuthor = document.getElementById('author');
 const buttonClass = document.querySelector('.buttonClass');
 const books = [];
 
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
+class UseBook {
+  static createBook() {
+    const newBook = new Book(bookTitle.value, bookAuthor.value);
+  }
+
+  static saveBook(newBook) {
+    const books = JSON.parse(localStorage.getItem('books'));
+    if  (books === null) {
+      localStorage.setItem('books', JSON.stringify([]));
+    } else {
+      books.push(newBook);
+      localStorage.setItem('books', JSON.stringify(books)); //
+    }
+
+
+  }
+}
+
 function saveBooks(newBooks) {
   // books = newBooks;
   localStorage.setItem('books', JSON.stringify(newBooks));
