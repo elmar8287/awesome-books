@@ -47,9 +47,7 @@ class UseBook {
       list.appendChild(br);
       deleteBtn.addEventListener('click', () => {
         if (deleteBtn.id === abook.title) {
-          const index = reloadBooks.findIndex(
-            (rBook) => rBook.title === deleteBtn.id
-          );
+          const index = reloadBooks.findIndex((rBook) => rBook.title === deleteBtn.id);
           reloadBooks.splice(index, 1);
           list.removeChild(book);
           localStorage.setItem('books', JSON.stringify(reloadBooks));
