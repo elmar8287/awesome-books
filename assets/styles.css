@@ -1,56 +1,57 @@
-/* * {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-h1 {
-  font-weight: 600;
+.s-container {
+  transform: scale(0.7);
 }
 
-li {
-  width: 465px;
-  border: solid rgb(238, 238, 238);
-  padding: 12px 12px 12px 12px;
-  border-radius: 7px;
-}
-
-.removeBtn {
-  padding: 7px 7px 7px 7px;
-  height: 35px;
-  border-radius: 5px;
-  border-color: rgb(209, 209, 209);
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.removeBtn:hover {
-  color: white;
+a {
   text-decoration: none;
-  cursor: pointer;
-  background-color: rgb(228, 74, 27);
+  color: inherit;
+  padding: 0;
+  margin: 0;
 }
 
-input {
-  height: 30px;
-  border-radius: 5px;
-  border-color: rgb(209, 209, 209);
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.buttonClass {
-  height: 35px;
-  border-radius: 5px;
-  border-color: rgb(209, 209, 209);
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.buttonClass:hover {
-  color: white;
+a:hover {
   text-decoration: none;
-  cursor: pointer;
-  background-color: rgb(43, 145, 12);
-} */
+  color: inherit;
+}
+
+ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.p-item {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #8f8f8f;
+}
+
+.p-link {
+  padding: 0;
+  margin: 0;
+}
+
+.p-item:hover {
+  background-color: #c9c8c888;
+  transition: all 0.2s ease;
+}
+
+.p-active {
+  transform: scale(1.2);
+  color: rgba(255, 255, 255, 0.712);
+  border: 1px solid black;
+}
+
+.b-table {
+  height: 430px;
+}
 
 ul {
   list-style-type: none;

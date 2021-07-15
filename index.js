@@ -3,6 +3,7 @@ const list = document.getElementById('list');
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const addButton = document.querySelector('.buttonClass');
+let current = 1;
 
 class Book {
   constructor(title, author) {
@@ -12,6 +13,39 @@ class Book {
 }
 
 class UseBook {
+  static pages(pages) {
+    const paginationUl = document.querySelector('.css-pagination');
+    paginationUl.innerHTML = '';
+    for (let i = 1; i <= pages; i++) {
+      const paginationLi = document.createElement('li');
+      paginationLi.className =
+        'p-item rounded-circle text-center d-flex justify-content-center';
+      paginationLi.id = i;
+      if (current === paginationLi.id) {
+        paginationLi.classList.add('bg-dark');
+        paginationLi.classList.add('p-active');
+        console.log('hello');
+      } else {
+        paginationLi.classList.remove('active');
+      }
+      paginationLi.addEventListener('click', () => {
+        current = paginationLi.id;
+        UseBook.displayBooks(current);
+      });
+      paginationLi.innerHTML = `<a class='p-link' href='#'>${i}
+    </a>`;
+      paginationUl.appendChild(paginationLi);
+    }
+  }
+
+  static paginate(currentPage = 1, rows, array) {
+    currentPage -= 1;
+    const loopStart = rows * currentPage;
+    const paginatedItems = array.slice(loopStart, loopStart + rows);
+    console.log(paginatedItems);
+    return paginatedItems;
+  }
+
   static createBook() {
     return new Book(bookTitle.value, bookAuthor.value);
   }
@@ -38,8 +72,9 @@ class UseBook {
     return JSON.parse(localStorage.getItem('books'));
   }
 
-  static displayBooks() {
-    const reloadBooks = UseBook.findBooks() || [];
+  static displayBooks(currentPage) {
+    const bookFound = UseBook.findBooks() || [];
+    const reloadBooks = UseBook.paginate(currentPage, 6, bookFound);
     list.innerHTML = '';
     reloadBooks.forEach((abook) => {
       const book = document.createElement('tr');
@@ -57,15 +92,19 @@ class UseBook {
       btnContainer.appendChild(deleteBtn);
       deleteBtn.addEventListener('click', () => {
         if (deleteBtn.id === abook.title) {
-          const index = reloadBooks.findIndex(
-            (rBook) => rBook.title === deleteBtn.id,
+          const index = bookFound.findIndex(
+            (rBook) => rBook.title === deleteBtn.id
           );
-          reloadBooks.splice(index, 1);
-          list.removeChild(book);
-          localStorage.setItem('books', JSON.stringify(reloadBooks));
+          bookFound.splice(index, 1);
+          // list.removeChild(book);
+          const pageId = document.querySelectorAll('.page-item');
+          localStorage.setItem('books', JSON.stringify(bookFound));
+          UseBook.displayBooks(current);
         }
       });
     });
+    const paginationSize = Math.ceil(bookFound.length / 6);
+    UseBook.pages(paginationSize);
   }
 }
 
@@ -111,6 +150,7 @@ addButton.addEventListener('click', () => {
     });
     UseBook.saveBook(abook);
   }
+  // pagination(2, 4, paginationData);
 });
 
 window.onload = () => {
@@ -125,10 +165,14 @@ function getNumberSuffix(num) {
   const lastDigit = num.toString().slice(-1);
 
   switch (lastDigit) {
-    case '1': return 'st';
-    case '2': return 'nd';
-    case '3': return 'rd';
-    default: return 'th';
+    case '1':
+      return 'st';
+    case '2':
+      return 'nd';
+    case '3':
+      return 'rd';
+    default:
+      return 'th';
   }
 }
 
@@ -137,16 +181,17 @@ const { DateTime } = luxon;
 /* eslint-enable */
 setInterval(() => {
   const today = DateTime.local();
-  const modified = today.toLocaleString({ ...DateTime.DATETIME_MED_WITH_SECONDS, month: 'long' }).split(' ');
+  const modified = today
+    .toLocaleString({ ...DateTime.DATETIME_MED_WITH_SECONDS, month: 'long' })
+    .split(' ');
   const dateNum = parseInt(modified[1], 10);
   modified[1] = dateNum + getNumberSuffix(dateNum);
-  modified[modified.length - 1] = (modified[modified.length - 1]).toLowerCase();
+  modified[modified.length - 1] = modified[modified.length - 1].toLowerCase();
   timeNow.innerHTML = modified.join(' ');
 }, 1000);
 
 const y = DateTime.now();
 // year.textContent = y.year;
-console.log(y);
 
 newAdd.addEventListener('click', () => {
   contactInfo.classList.add('d-none');
