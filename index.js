@@ -96,3 +96,35 @@ addButton.addEventListener('click', () => {
 window.onload = () => {
   UseBook.displayBooks();
 };
+
+
+const timeNow = document.querySelector('.timeNow');
+
+function getNumberSuffix(num) {
+  if (num >= 11 && num <= 13) return 'th';
+
+  const lastDigit = num.toString().slice(-1);
+
+  switch (lastDigit) {
+    case '1': return 'st';
+    case '2': return 'nd';
+    case '3': return 'rd';
+    default: return 'th';
+  }
+}
+
+/* eslint-disable */
+const { DateTime } = luxon;
+/* eslint-enable */
+setInterval(() => {
+  const today = DateTime.local();
+  const modified = today.toLocaleString({ ...DateTime.DATETIME_MED_WITH_SECONDS, month: 'long' }).split(' ');
+  const dateNum = parseInt(modified[1], 10);
+  modified[1] = dateNum + getNumberSuffix(dateNum);
+  modified[modified.length - 1] = (modified[modified.length - 1]).toLowerCase();
+  timeNow.innerHTML = modified.join(' ');
+}, 1000);
+
+const y = DateTime.now();
+// year.textContent = y.year;
+console.log(y);
