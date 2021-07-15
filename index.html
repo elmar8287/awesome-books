@@ -29,9 +29,8 @@
       <p class="timeNow ml-auto mr-4 p-4 pb-0"></p>
     </div>
 
-    <h1 class="text-center font-weight-bold pb-3">Awesome books</h1>
-
-    <div class="container">
+    <div class="container d-none">
+      <h1 class="text-center font-weight-bold pb-3">Awesome books</h1>
       <table
         class="table table-striped w-75 ml-auto mr-auto table-hover border"
       >
@@ -91,7 +90,11 @@
         </li>
       </ul>
     </div>
-    <footer>&copy;2021</footer>
+    <footer
+      class="bg-dark text-light mt-5 p-3 position-fixed w-100 fixed-bottom"
+    >
+      &copy;2021
+    </footer>
     <script src="./luxon.js"></script>
     <script src="./index.js"></script>
   </body>
