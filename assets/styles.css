@@ -92,6 +92,10 @@ ul {
 
   .mob-navigation {
     justify-content: center;
+    height: 40vh;
+    align-items: center;
+    background: rgba(52, 58, 64, 0.9) !important;
+    border-radius: 0 0 40px 40px;
   }
 
   .mob-navigation i {
@@ -102,6 +106,7 @@ ul {
     display: block !important;
     position: absolute;
     right: 0;
+    top: 0;
   }
 
   .mob-navigation ul {
@@ -120,5 +125,9 @@ ul {
 
   .mob-navigation ul li:first-child {
     display: none;
+  }
+
+  .flue {
+    filter: blur(5px);
   }
 }

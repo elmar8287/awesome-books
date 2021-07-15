@@ -112,6 +112,10 @@ const inputs = document.querySelector('.inputs');
 const openList = document.querySelector('.openList');
 const openContact = document.querySelector('.openContact');
 
+const menu = document.querySelector('.humburger');
+const nav = document.querySelector('.navigation');
+const cancelMenu = document.querySelector('.cancel-btn');
+
 addButton.addEventListener('click', () => {
   contactInfo.classList.add('d-none');
   contactInfo.classList.remove('d-flex');
@@ -194,6 +198,13 @@ newAdd.addEventListener('click', () => {
   inputs.classList.remove('d-none');
   inputs.classList.add('d-flex');
   contactInfo.classList.remove('d-flex');
+
+  nav.classList.remove('mob-navigation');
+  nav.classList.add('navigation');
+  contactInfo.classList.remove('flue');
+  inputs.classList.remove('flue');
+  bookList.classList.remove('flue');
+  timeNow.parentElement.classList.remove('flue');
 });
 
 openContact.addEventListener('click', () => {
@@ -202,6 +213,13 @@ openContact.addEventListener('click', () => {
   bookList.classList.add('d-none');
   inputs.classList.add('d-none');
   inputs.classList.remove('d-flex');
+
+  nav.classList.remove('mob-navigation');
+  nav.classList.add('navigation');
+  contactInfo.classList.remove('flue');
+  inputs.classList.remove('flue');
+  bookList.classList.remove('flue');
+  timeNow.parentElement.classList.remove('flue');
 });
 
 openList.addEventListener('click', () => {
@@ -210,18 +228,29 @@ openList.addEventListener('click', () => {
   bookList.classList.remove('d-none');
   inputs.classList.add('d-none');
   inputs.classList.remove('d-flex');
-});
 
-const menu = document.querySelector('.humburger');
-const nav = document.querySelector('.navigation');
-const cancelMenu = document.querySelector('.cancel-btn');
+  nav.classList.remove('mob-navigation');
+  nav.classList.add('navigation');
+  contactInfo.classList.remove('flue');
+  inputs.classList.remove('flue');
+  bookList.classList.remove('flue');
+  timeNow.parentElement.classList.remove('flue');
+});
 
 menu.addEventListener('click', () => {
   nav.classList.add('mob-navigation');
   nav.classList.remove('navigation');
+  contactInfo.classList.add('flue');
+  inputs.classList.add('flue');
+  bookList.classList.add('flue');
+  timeNow.parentElement.classList.add('flue');
 });
 
 cancelMenu.addEventListener('click', () => {
   nav.classList.remove('mob-navigation');
   nav.classList.add('navigation');
+  contactInfo.classList.remove('flue');
+  inputs.classList.remove('flue');
+  bookList.classList.remove('flue');
+  timeNow.parentElement.classList.remove('flue');
 });
