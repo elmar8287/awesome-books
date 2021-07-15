@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 /* eslint-disable max-classes-per-file */
 const list = document.getElementById('list');
 const bookTitle = document.getElementById('title');
@@ -16,15 +17,13 @@ class UseBook {
   static pages(pages) {
     const paginationUl = document.querySelector('.css-pagination');
     paginationUl.innerHTML = '';
-    for (let i = 1; i <= pages; i++) {
+    for (let i = 1; i <= pages; i += 1) {
       const paginationLi = document.createElement('li');
-      paginationLi.className =
-        'p-item rounded-circle text-center d-flex justify-content-center';
+      paginationLi.className = 'p-item rounded-circle text-center d-flex justify-content-center';
       paginationLi.id = i;
       if (current === paginationLi.id) {
         paginationLi.classList.add('bg-dark');
         paginationLi.classList.add('p-active');
-        console.log('hello');
       } else {
         paginationLi.classList.remove('active');
       }
@@ -42,7 +41,6 @@ class UseBook {
     currentPage -= 1;
     const loopStart = rows * currentPage;
     const paginatedItems = array.slice(loopStart, loopStart + rows);
-    console.log(paginatedItems);
     return paginatedItems;
   }
 
@@ -92,12 +90,8 @@ class UseBook {
       btnContainer.appendChild(deleteBtn);
       deleteBtn.addEventListener('click', () => {
         if (deleteBtn.id === abook.title) {
-          const index = bookFound.findIndex(
-            (rBook) => rBook.title === deleteBtn.id
-          );
+          const index = bookFound.findIndex((rBook) => rBook.title === deleteBtn.id);
           bookFound.splice(index, 1);
-          // list.removeChild(book);
-          const pageId = document.querySelectorAll('.page-item');
           localStorage.setItem('books', JSON.stringify(bookFound));
           UseBook.displayBooks(current);
         }
@@ -189,9 +183,6 @@ setInterval(() => {
   modified[modified.length - 1] = modified[modified.length - 1].toLowerCase();
   timeNow.innerHTML = modified.join(' ');
 }, 1000);
-
-const y = DateTime.now();
-// year.textContent = y.year;
 
 newAdd.addEventListener('click', () => {
   contactInfo.classList.add('d-none');
