@@ -19,8 +19,7 @@ class UseBook {
     paginationUl.innerHTML = '';
     for (let i = 1; i <= pages; i += 1) {
       const paginationLi = document.createElement('li');
-      paginationLi.className =
-        'p-item rounded-circle text-center d-flex justify-content-center';
+      paginationLi.className = 'p-item rounded-circle text-center d-flex justify-content-center';
       paginationLi.id = i;
       if (current === paginationLi.id) {
         paginationLi.classList.add('bg-dark');
@@ -91,9 +90,7 @@ class UseBook {
       btnContainer.appendChild(deleteBtn);
       deleteBtn.addEventListener('click', () => {
         if (deleteBtn.id === abook.title) {
-          const index = bookFound.findIndex(
-            (rBook) => rBook.title === deleteBtn.id
-          );
+          const index = bookFound.findIndex((rBook) => rBook.title === deleteBtn.id);
           bookFound.splice(index, 1);
           localStorage.setItem('books', JSON.stringify(bookFound));
           UseBook.displayBooks(current);
