@@ -21,11 +21,11 @@ class UseBook {
     if (books === null) {
       localStorage.setItem('books', JSON.stringify([]));
     } else {
-      let searchBooks  = UseBook.findBooks();
-      for (let i of searchBooks) {
-          if (newBook.title === i.title) {
-            return 
-          }
+      const searchBooks = UseBook.findBooks();
+      for (let i = 0; i < searchBooks.length; i += 1) {
+        if (newBook.title === searchBooks[i].title) {
+          return;
+        }
       }
       if (newBook.title !== '') {
         books.push(newBook);
@@ -69,12 +69,12 @@ class UseBook {
   }
 }
 
-const newAdd = document.querySelector(".openNew");
-const contactInfo = document.getElementsByClassName("contact")[0];
-const bookList = document.getElementsByClassName("listBook")[0];
-const inputs = document.querySelector(".inputs");
-const openList = document.querySelector(".openList");
-const openContact = document.querySelector(".openContact");
+const newAdd = document.querySelector('.openNew');
+const contactInfo = document.getElementsByClassName('contact')[0];
+const bookList = document.getElementsByClassName('listBook')[0];
+const inputs = document.querySelector('.inputs');
+const openList = document.querySelector('.openList');
+const openContact = document.querySelector('.openContact');
 
 addButton.addEventListener('click', () => {
   contactInfo.classList.add('d-none');
@@ -116,7 +116,6 @@ addButton.addEventListener('click', () => {
 window.onload = () => {
   UseBook.displayBooks();
 };
-
 
 const timeNow = document.querySelector('.timeNow');
 
