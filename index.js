@@ -61,7 +61,19 @@ class UseBook {
   }
 }
 
+const newAdd = document.querySelector(".openNew");
+const contactInfo = document.getElementsByClassName("contact")[0];
+const bookList = document.getElementsByClassName("listBook")[0];
+const inputs = document.querySelector(".inputs");
+const openList = document.querySelector(".openList");
+const openContact = document.querySelector(".openContact");
+
 addButton.addEventListener('click', () => {
+  contactInfo.classList.add('d-none');
+  contactInfo.classList.remove('d-flex');
+  bookList.classList.remove('d-none');
+  inputs.classList.add('d-none');
+  inputs.classList.remove('d-flex');
   const newBook = UseBook.createBook();
   UseBook.saveBook(newBook);
   UseBook.displayBooks();
@@ -128,3 +140,27 @@ setInterval(() => {
 const y = DateTime.now();
 // year.textContent = y.year;
 console.log(y);
+
+newAdd.addEventListener('click', () => {
+  contactInfo.classList.add('d-none');
+  bookList.classList.add('d-none');
+  inputs.classList.remove('d-none');
+  inputs.classList.add('d-flex');
+  contactInfo.classList.remove('d-flex');
+});
+
+openContact.addEventListener('click', () => {
+  contactInfo.classList.remove('d-none');
+  contactInfo.classList.add('d-flex');
+  bookList.classList.add('d-none');
+  inputs.classList.add('d-none');
+  inputs.classList.remove('d-flex');
+});
+
+openList.addEventListener('click', () => {
+  contactInfo.classList.add('d-none');
+  contactInfo.classList.remove('d-flex');
+  bookList.classList.remove('d-none');
+  inputs.classList.add('d-none');
+  inputs.classList.remove('d-flex');
+});

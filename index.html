@@ -19,9 +19,9 @@
     >
       <ul class="d-flex w-100 p-3 pr-5">
         <li class="mr-auto pl-4">Awesome Books</li>
-        <li class="mr-3 pr-3 border-right border-white">List</li>
-        <li class="mr-3 pr-3 border-right border-white">Add new</li>
-        <li class="mr-3">Contact</li>
+        <li class="mr-3 pr-3 border-right border-white openList">List</li>
+        <li class="mr-3 pr-3 border-right border-white openNew">Add new</li>
+        <li class="mr-3 openContact">Contact</li>
       </ul>
     </nav>
 
@@ -29,23 +29,27 @@
       <p class="timeNow ml-auto mr-4 p-4 pb-0"></p>
     </div>
 
-    <div class="container d-none">
-      <h1 class="text-center font-weight-bold pb-3">Awesome books</h1>
+    <div class="container w-100">
+      <div class="listBook container w-100">
+        <h1 class="text-center font-weight-bold pb-3">Awesome books</h1>
       <table
         class="table table-striped w-75 ml-auto mr-auto table-hover border"
       >
         <tbody id="list"></tbody>
       </table>
+
+      </div>
+      
       <div
         class="
           inputs
           ml-auto
           mr-auto
-          d-flex
           flex-column
           align-items-center
           w-50
           form-group
+          d-none
         "
       >
         <h2 class="text-center mt-5 font-weight-bold">ADD A NEW BOOK</h2>
@@ -69,7 +73,7 @@
         </button>
       </div>
     </div>
-    <div class="contact d-flex m-auto flex-column align-items-center w-100">
+    <div class="contact d-none m-auto flex-column align-items-center w-100">
       <h2 class="text-center font-weight-bold pb-3">Contact Information</h2>
       <p class="">
         Doyou have anny question or you just want to say "Hello" <br />
