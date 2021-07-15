@@ -97,25 +97,34 @@ window.onload = () => {
   UseBook.displayBooks();
 };
 
+
 const timeNow = document.querySelector('.timeNow');
-const dayTime = luxon.DateTime;
-const time = dayTime.now();
-const span1 = document.createElement('span');
-const span2 = document.createElement('span');
-const span3 = document.createElement('span');
-const span4 = document.createElement('span');
-const span5 = document.createElement('span');
-console.log(time);
-span2.innerHTML = time.monthLong;
-timeNow.appendChild(span2);
-span1.innerHTML = time.year;
-timeNow.appendChild(span1);
 
-span3.innerHTML = time.day;
-timeNow.appendChild(span3);
-span4.innerHTML = time.hour;
-timeNow.appendChild(span4);
-span5.innerHTML = time.minute;
-timeNow.appendChild(span5);
+function getNumberSuffix(num) {
+  if (num >= 11 && num <= 13) return 'th';
 
-// timeNow.innerHTML = now;
+  const lastDigit = num.toString().slice(-1);
+
+  switch (lastDigit) {
+    case '1': return 'st';
+    case '2': return 'nd';
+    case '3': return 'rd';
+    default: return 'th';
+  }
+}
+
+/* eslint-disable */
+const { DateTime } = luxon;
+/* eslint-enable */
+setInterval(() => {
+  const today = DateTime.local();
+  const modified = today.toLocaleString({ ...DateTime.DATETIME_MED_WITH_SECONDS, month: 'long' }).split(' ');
+  const dateNum = parseInt(modified[1], 10);
+  modified[1] = dateNum + getNumberSuffix(dateNum);
+  modified[modified.length - 1] = (modified[modified.length - 1]).toLowerCase();
+  timeNow.innerHTML = modified.join(' ');
+}, 1000);
+
+const y = DateTime.now();
+// year.textContent = y.year;
+console.log(y);
