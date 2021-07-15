@@ -199,12 +199,16 @@ newAdd.addEventListener('click', () => {
   inputs.classList.add('d-flex');
   contactInfo.classList.remove('d-flex');
 
-  nav.classList.remove('mob-navigation');
-  nav.classList.add('navigation');
-  contactInfo.classList.remove('flue');
-  inputs.classList.remove('flue');
-  bookList.classList.remove('flue');
-  timeNow.parentElement.classList.remove('flue');
+  nav.classList.add('navigation-Anim');
+  setTimeout(() => {
+    nav.classList.remove('navigation-Anim');
+    nav.classList.remove('mob-navigation');
+    nav.classList.add('navigation');
+    contactInfo.classList.remove('flue');
+    inputs.classList.remove('flue');
+    bookList.classList.remove('flue');
+    timeNow.parentElement.classList.remove('flue');
+  }, 400);
 });
 
 openContact.addEventListener('click', () => {
@@ -214,12 +218,16 @@ openContact.addEventListener('click', () => {
   inputs.classList.add('d-none');
   inputs.classList.remove('d-flex');
 
-  nav.classList.remove('mob-navigation');
-  nav.classList.add('navigation');
-  contactInfo.classList.remove('flue');
-  inputs.classList.remove('flue');
-  bookList.classList.remove('flue');
-  timeNow.parentElement.classList.remove('flue');
+  nav.classList.add('navigation-Anim');
+  setTimeout(() => {
+    nav.classList.remove('navigation-Anim');
+    nav.classList.remove('mob-navigation');
+    nav.classList.add('navigation');
+    contactInfo.classList.remove('flue');
+    inputs.classList.remove('flue');
+    bookList.classList.remove('flue');
+    timeNow.parentElement.classList.remove('flue');
+  }, 400);
 });
 
 openList.addEventListener('click', () => {
@@ -229,28 +237,40 @@ openList.addEventListener('click', () => {
   inputs.classList.add('d-none');
   inputs.classList.remove('d-flex');
 
-  nav.classList.remove('mob-navigation');
-  nav.classList.add('navigation');
-  contactInfo.classList.remove('flue');
-  inputs.classList.remove('flue');
-  bookList.classList.remove('flue');
-  timeNow.parentElement.classList.remove('flue');
+  nav.classList.add('navigation-Anim');
+  setTimeout(() => {
+    nav.classList.remove('navigation-Anim');
+    nav.classList.remove('mob-navigation');
+    nav.classList.add('navigation');
+    contactInfo.classList.remove('flue');
+    inputs.classList.remove('flue');
+    bookList.classList.remove('flue');
+    timeNow.parentElement.classList.remove('flue');
+  }, 400);
 });
 
 menu.addEventListener('click', () => {
-  nav.classList.add('mob-navigation');
+  nav.classList.add('mob-navigation-anim');
   nav.classList.remove('navigation');
   contactInfo.classList.add('flue');
   inputs.classList.add('flue');
   bookList.classList.add('flue');
   timeNow.parentElement.classList.add('flue');
+  setTimeout(() => {
+    nav.classList.remove('mob-navigation-anim');
+    nav.classList.add('mob-navigation');
+  }, 10);
 });
 
 cancelMenu.addEventListener('click', () => {
-  nav.classList.remove('mob-navigation');
-  nav.classList.add('navigation');
-  contactInfo.classList.remove('flue');
-  inputs.classList.remove('flue');
-  bookList.classList.remove('flue');
-  timeNow.parentElement.classList.remove('flue');
+  nav.classList.add('navigation-Anim');
+  setTimeout(() => {
+    nav.classList.remove('navigation-Anim');
+    nav.classList.remove('mob-navigation');
+    nav.classList.add('navigation');
+    contactInfo.classList.remove('flue');
+    inputs.classList.remove('flue');
+    bookList.classList.remove('flue');
+    timeNow.parentElement.classList.remove('flue');
+  }, 400);
 });

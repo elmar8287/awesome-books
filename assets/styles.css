@@ -96,6 +96,8 @@ ul {
     align-items: center;
     background: rgba(52, 58, 64, 0.9) !important;
     border-radius: 0 0 40px 40px;
+    transition: all 0.8s ease-in-out;
+    transform: translateY(0);
   }
 
   .mob-navigation i {
@@ -129,5 +131,14 @@ ul {
 
   .flue {
     filter: blur(5px);
+  }
+
+  .navigation-Anim {
+    transform: translateY(-1000px);
+    transition: all 0.8s ease-in-out;
+  }
+
+  .mob-navigation-anim {
+    transform: translateY(-500px);
   }
 }
