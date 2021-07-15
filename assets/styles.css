@@ -25,6 +25,10 @@ ul li {
   margin: 0;
 }
 
+li:hover {
+  cursor: pointer;
+}
+
 .p-item {
   width: 45px;
   height: 45px;

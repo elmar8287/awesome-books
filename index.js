@@ -144,7 +144,8 @@ addButton.addEventListener('click', () => {
     });
     UseBook.saveBook(abook);
   }
-  // pagination(2, 4, paginationData);
+  bookTitle.value = '';
+  bookAuthor.value = '';
 });
 
 window.onload = () => {
