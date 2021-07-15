@@ -50,7 +50,7 @@ class UseBook {
       deleteBtn.addEventListener('click', () => {
         if (deleteBtn.id === abook.title) {
           const index = reloadBooks.findIndex(
-            (rBook) => rBook.title === deleteBtn.id
+            (rBook) => rBook.title === deleteBtn.id,
           );
           reloadBooks.splice(index, 1);
           list.removeChild(book);
