@@ -62,3 +62,63 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+@media only screen and (max-width: 800px) {
+  .listBook .css-table {
+    width: 100% !important;
+  }
+
+  .inputs {
+    width: 100% !important;
+  }
+
+  .s-container {
+    transform: translateY(-50px) scale(0.8);
+  }
+
+  .navigation ul {
+    display: none !important;
+  }
+
+  .humburger {
+    display: block !important;
+    color: white;
+    z-index: 999;
+  }
+
+  .humburger:hover {
+    cursor: pointer;
+  }
+
+  .mob-navigation {
+    justify-content: center;
+  }
+
+  .mob-navigation i {
+    display: none !important;
+  }
+
+  .mob-navigation .cancel-btn {
+    display: block !important;
+    position: absolute;
+    right: 0;
+  }
+
+  .mob-navigation ul {
+    flex-direction: column;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 20px 0 !important;
+    position: relative;
+  }
+
+  .mob-navigation ul li {
+    border: none !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+
+  .mob-navigation ul li:first-child {
+    display: none;
+  }
+}

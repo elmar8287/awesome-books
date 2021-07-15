@@ -10,13 +10,29 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./assets/styles.css" />
     <title>Awesome Books - Elmar Abdulkarimov</title>
   </head>
   <body>
     <nav
-      class="w-100 bg-dark text-white font-weight-bold position-fixed fixed-top"
+      class="
+        w-100
+        bg-dark
+        navigation
+        text-white
+        font-weight-bold
+        position-fixed
+        fixed-top
+        d-flex
+      "
     >
+      <i class="fa fa-bars fa-2x d-none m-3 mr-4 ml-auto humburger"></i>
+      <i class="fa cancel-btn fa-times m-3 mt-0 ml-auto fa-2x d-none"></i>
+
       <ul class="d-flex w-100 p-3 pr-5">
         <li class="mr-auto pl-4">Awesome Books</li>
         <li class="mr-3 pr-3 border-right border-white openList">List</li>
@@ -29,11 +45,22 @@
       <p class="timeNow ml-auto mr-4 p-4 pb-0"></p>
     </div>
 
-    <div class=" s-container container w-100 d-flex flex-column align-items-center">
+    <div
+      class="s-container container w-100 d-flex flex-column align-items-center"
+    >
       <div class="listBook container w-100">
         <h1 class="text-center font-weight-bold pb-3">Awesome books</h1>
         <table
-          class="table table-striped w-75 ml-auto mr-auto table-hover border"
+          class="
+            table
+            css-table
+            table-striped
+            w-75
+            ml-auto
+            mr-auto
+            table-hover
+            border
+          "
         >
           <tbody id="list"></tbody>
         </table>
