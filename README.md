@@ -9,7 +9,9 @@ Tasks to do:
 - Project 3: Style core elements of the page.
 - Project 4: Create a complete website with navigation.
 
-![scrn-sht](https://user-images.githubusercontent.com/49064106/125652311-511f9a9b-32a0-4989-a9a3-e2e785e49288.png)
+|     | Awesome Books                                                                                                                                 |     |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+|     | ![Screenshot from 2021-07-15 18-02-09](https://user-images.githubusercontent.com/65068771/125820177-18ac9ff9-c6b5-4c4d-87c3-49b6737efdd3.png) |     |
 
 ## Built With
 
@@ -32,8 +34,8 @@ Tasks to do:
 
 - GitHub: [@Erezfree29](https://github.com/erezfree29)
 
-
 ## Live demo
+
 You can visit live version via [link](https://elmar8287.github.io/awesome-books/)
 
 ## 🤝 Contributing
