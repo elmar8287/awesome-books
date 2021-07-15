@@ -21,7 +21,15 @@ class UseBook {
     if (books === null) {
       localStorage.setItem('books', JSON.stringify([]));
     } else {
-      books.push(newBook);
+      let searchBooks  = UseBook.findBooks();
+      for (let i of searchBooks) {
+          if (newBook.title === i.title) {
+            return 
+          }
+      }
+      if (newBook.title !== '') {
+        books.push(newBook);
+      }
       localStorage.setItem('books', JSON.stringify(books)); //
     }
   }
